@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/fragment::head"> </head>
+
+    <body>
+        <!-- Sidenav -->
+        <nav th:replace="fragment/fragment::sidebar"> </nav>
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Top navbar -->
+            <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+                <div class="container-fluid">
+                    <!-- Brand -->
+                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" th:href="@{/}">SpringBanque</a>
+                    <!-- Form -->
+                    <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+                        <div class="form-group mb-0">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="Search" type="text"/>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- User jessica Jones debut-->
+                    <ul th:replace="fragment/fragment::profil">
+                    </ul>
+                    <!-- User jessica Jones fin-->
+
+                </div>
+            </nav>
+            <!-- Header -->
+            <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+                <div class="container-fluid">
+                    <div class="header-body">
+                        <!-- Card stats -->
+                        <!--<div class="row">-->
+                            <!--<div class="col-xl-3 col-lg-6">-->
+                                <!--<div class="card card-stats mb-4 mb-xl-0">-->
+                                    <!--<div class="card-body">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col">-->
+                                                <!--<h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>-->
+                                                <!--<span class="h2 font-weight-bold mb-0">350,897</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-auto">-->
+                                                <!--<div class="icon icon-shape bg-danger text-white rounded-circle shadow">-->
+                                                    <!--<i class="fas fa-chart-bar"></i>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<p class="mt-3 mb-0 text-muted text-sm">-->
+                                            <!--<span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>-->
+                                            <!--<span class="text-nowrap">Since last month</span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-xl-3 col-lg-6">-->
+                                <!--<div class="card card-stats mb-4 mb-xl-0">-->
+                                    <!--<div class="card-body">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col">-->
+                                                <!--<h5 class="card-title text-uppercase text-muted mb-0">New users</h5>-->
+                                                <!--<span class="h2 font-weight-bold mb-0">2,356</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-auto">-->
+                                                <!--<div class="icon icon-shape bg-warning text-white rounded-circle shadow">-->
+                                                    <!--<i class="fas fa-chart-pie"></i>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<p class="mt-3 mb-0 text-muted text-sm">-->
+                                            <!--<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>-->
+                                            <!--<span class="text-nowrap">Since last week</span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-xl-3 col-lg-6">-->
+                                <!--<div class="card card-stats mb-4 mb-xl-0">-->
+                                    <!--<div class="card-body">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col">-->
+                                                <!--<h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>-->
+                                                <!--<span class="h2 font-weight-bold mb-0">924</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-auto">-->
+                                                <!--<div class="icon icon-shape bg-yellow text-white rounded-circle shadow">-->
+                                                    <!--<i class="fas fa-users"></i>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<p class="mt-3 mb-0 text-muted text-sm">-->
+                                            <!--<span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>-->
+                                            <!--<span class="text-nowrap">Since yesterday</span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="col-xl-3 col-lg-6">-->
+                                <!--<div class="card card-stats mb-4 mb-xl-0">-->
+                                    <!--<div class="card-body">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col">-->
+                                                <!--<h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>-->
+                                                <!--<span class="h2 font-weight-bold mb-0">49,65%</span>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-auto">-->
+                                                <!--<div class="icon icon-shape bg-info text-white rounded-circle shadow">-->
+                                                    <!--<i class="fas fa-percent"></i>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<p class="mt-3 mb-0 text-muted text-sm">-->
+                                            <!--<span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>-->
+                                            <!--<span class="text-nowrap">Since last month</span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!-- Header container -->
+                            <div class="container-fluid d-flex align-items-center">
+                                <div class="row">
+                                    <div class=" text-center col-lg-14 col-md-12">
+                                        <br/>
+                                        <br/>
+                                        <marquee><h3 class="text-white mb-0">page d'accueil elle contient la liste de tous les ajouts tu peux faire un update </h3></marquee>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page content -->
+            <div class="container-fluid mt--9">
+
+                <!-- div d'alerte debut-->
+                <div  th:if="${alertclient}" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span th:text="${alertclient}"> Ajout effectué avec succes ...</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- div d'alerte fin-->
+
+                <div class="row mt-5">
+                    <div class="col-xl-12  mb-5 mb-xl-8">
+                        <div class="card shadow">
+                            <div class="card-header border-0">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="mb-0">liste de clients ajoutées</h3>
+                                    </div>
+                                    <!--<div class="col text-right">-->
+                                        <!--<a href="#!" class="btn btn-sm btn-primary">Voir la liste total</a>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                            <div th:if="${listeclient} == null">
+                                <p> Tableau vide </p>
+                            </div>
+
+                            <div th:if="${listeclient} != null">
+
+                                <div class="table-responsive">
+                                    <!-- Projects table -->
+                                    <table class="table align-items-center table-flush">
+                                        <thead class="thead-light shadow  ">
+                                        <tr>
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Prenom</th>
+                                            <th scope="col">Tel</th>
+                                            <th scope="col">Localité</th>
+                                            <th scope="col">Email </th>
+                                            <th scope="col">Nombre de Comptes </th>
+                                            <th> Action </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="clientmap :${listeclient}">
+                                            <th scope="row" th:text="${clientmap.client.nom}">
+                                                /argon/
+                                            </th>
+                                            <td th:text="${clientmap.client.prenom}">
+                                                4,569
+                                            </td>
+                                            <td th:text="${clientmap.client.tel}">
+                                                340
+                                            </td>
+                                            <td th:text="${clientmap.client.localite}">
+                                                46,53%
+                                            </td>
+                                            <td th:text="${clientmap.client.mail}"> djhbekbaz@gmail.com </td>
+                                            <td th:text="${clientmap.nbrCompte}"> nombre de compte </td>
+
+                                            <td><a th:href="${'/profile/'+clientmap.client.id}" class="btn btn-sm btn-primary">Modifier</a></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--fragment footer-->
+                <footer th:replace="fragment/fragment :: footer"></footer>
+
+            </div>
+        </div>
+
+        <!--fragment script-->
+        <soulama th:replace="fragment/fragment :: scripts"></soulama>
+    </body>
+</html>

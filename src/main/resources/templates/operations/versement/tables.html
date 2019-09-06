@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/fragment::head"></head>
+
+<body>
+<!-- Sidenav -->
+<nav th:replace="fragment/fragment::sidebar">
+</nav>
+<!-- Main content -->
+<div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <!-- Brand -->
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" th:href="@{/versement}">Versement</a>
+
+            <!-- User jessica Jones debut-->
+            <ul th:replace="fragment/fragment::profil"></ul>
+            <!-- User jessica Jones fin-->
+
+        </div>
+    </nav>
+
+    <!-- Header debut -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+
+            </div>
+        </div>
+    </div>
+    <!-- Header fin -->
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+        <!-- Table -->
+        <div class="col-lg-8 col-md-2">
+            <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">Versement</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <!-- formulaire -->
+                    <form method="post" th:action="@{/saveversement}">
+                        <div class="pl-lg-4">
+                            <!-- Compte -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Compte
+                                            Versement</label>
+                                        <input name="compteverser" type="text" id="input-first-name"
+                                               class="form-control form-control-alternative"
+                                               placeholder="Numero du compte Pour le versement">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- montant -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Montant à verser</label>
+                                        <input name="montant" type="number" id="input-email"
+                                               class="form-control form-control-alternative"
+                                               placeholder="Entrer le montant à verser">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- bouton -->
+                        <div class="pl-lg-4">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary pull-right">Enreg</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--fragment footer-->
+        <footer th:replace="fragment/fragment :: footer"></footer>
+
+    </div>
+</div>
+
+<!--fragment script-->
+<soulama th:replace="fragment/fragment :: scripts"></soulama>
+
+</body>
+
+</html>

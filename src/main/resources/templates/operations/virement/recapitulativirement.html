@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment/fragment::head">
+</head>
+
+<body>
+<!-- Sidenav -->
+<nav th:replace="fragment/fragment::sidebar">
+
+</nav>
+<!-- Main content -->
+<div class="main-content">
+    <!-- Top navbar -->
+    <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+            <!-- Brand -->
+            <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" th:href="@{/}">SpringBanque</a>
+            <!-- Form -->
+            <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+                <div class="form-group mb-0">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Search" type="text"/>
+                    </div>
+                </div>
+            </form>
+
+            <!-- User jessica Jones debut-->
+            <ul th:replace="fragment/fragment::profil">
+            </ul>
+            <!-- User jessica Jones fin-->
+
+        </div>
+    </nav>
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+
+                <!-- Header container -->
+                <div class="container-fluid d-flex align-items-center">
+                    <div class="row">
+                        <div class=" text-center col-lg-14 col-md-12">
+                            <br/>
+                            <br/>
+                            <marquee><h3 class="text-white mb-0">Page d'accueil du resumer des virements, elle contient la liste de tous les virements effectués </h3></marquee>
+                        </div>
+                    </div>
+                </div>
+
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--9">
+
+        <!-- div d'alerte debut-->
+        <div  th:if="${aletervirement}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <span th:text="${aletervirement}"> Ajout effectué avec succes ...</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- div d'alerte fin-->
+
+        <div class="row mt-5">
+            <div class="col-xl-12  mb-5 mb-xl-8">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">liste des virements</h3>
+                            </div>
+                            <div class="col" align="right">
+                                <!-- appelle de la function-->
+                                <a th:href="@{/virementcompte}" class="btn btn-sm
+                                                    btn-primary pull-right"> faire un virement
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:if="${listevirement} == null">
+                        <p> Tableau vide </p>
+                    </div>
+
+                    <div th:if="${listevirement} != null">
+
+                        <div class="table-responsive">
+                            <!-- Projects table -->
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light shadow  ">
+                                <tr>
+                                    <th scope="col">Compte Débiteur</th>
+                                    <th scope="col">Compte Créditeur</th>
+                                    <th scope="col">Montant debité</th>
+                                    <th scope="col">Reference transation</th>
+                                    <th scope="col">Date transaction</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- affectation des infos contenus dans la clé aune listvirementmap pour un foreach-->
+                                <tr th:each="listvirementmap :${listevirement}">
+                                    <!-- affichage d'infodans la vue -->
+                                    <th scope="row" th:text="${listvirementmap.comptedebiteur.numeroCompte}">
+                                        /argon/
+                                    </th>
+                                    <td th:text="${listvirementmap.comptecrediteur.numeroCompte}">
+                                        4,569
+                                    </td>
+                                    <td  th:text="${listvirementmap.montant}">
+                                        340
+                                    </td>
+                                    <td th:text="${listvirementmap.reference}">
+                                        340
+                                    </td>
+                                    <td th:text="${listvirementmap.dateoperation}">
+                                        340
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--fragment footer-->
+        <footer th:replace="fragment/fragment :: footer"></footer>
+
+    </div>
+</div>
+
+<!--fragment script-->
+<soulama th:replace="fragment/fragment :: scripts"></soulama>
+</body>
+</html>
